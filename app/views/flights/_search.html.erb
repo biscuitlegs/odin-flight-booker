@@ -1,0 +1,15 @@
+<%= form_with(url: "/flights", method: "GET", local: true, scope: :search) do |form| %>
+    <%= form.label :departure_airport_id, "From:" %>
+    <%= form.collection_select(:departure_airport_id, @airports, :id, :name) %>
+
+    <%= form.label :destination_airport_id, "To:" %>
+    <%= form.collection_select(:destination_airport_id, @airports, :id, :name) %>
+
+    <%= form.label :number_of_passengers, "Passengers:" %>
+    <%= form.select(:number_of_passengers, @number_of_passengers ) %>
+
+    <%= form.label :departure_time, "Date:" %>
+    <%= form.collection_select(:departure_date, @flights, :departure_time_date, :departure_time_date) %>
+
+    <%= form.submit "Search" %>
+<% end %>

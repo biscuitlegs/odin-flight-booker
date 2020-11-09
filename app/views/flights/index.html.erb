@@ -1,0 +1,12 @@
+<h1>Flights</h1>
+
+<h3>Search for a flight</h3>
+<%= render "search" %>
+
+
+<% if @matching_flights.any? %>
+    <h3>Results:</h3>
+        <%= render "results" %>
+<% else %>
+    <h3>No results found.</h3>
+<% end %>
