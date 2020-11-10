@@ -8,7 +8,7 @@ class Flight < ApplicationRecord
     end
 
     def departure_time_date_and_time
-        departure_time.strftime("%d/%m/%Y %H:%M:%S")
+        departure_time.strftime("%d/%m/%Y at %H:%M")
     end
 
 end

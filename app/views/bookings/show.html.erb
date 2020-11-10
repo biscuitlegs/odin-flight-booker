@@ -1,0 +1,17 @@
+<h1>Booking for <%= @booking.passengers.first.name %>
+<% if @booking.passengers.count > 1 %>
+    and <%= @booking.passengers.count - 1 %> more 
+<% end %>
+</h1>
+
+<h2>Flight</h2>
+<p>From: <%= @booking.flight.from_airport.name %></p>
+<p>To: <%= @booking.flight.to_airport.name %></p>
+<p>Departure: <%= @booking.flight.departure_time_date_and_time %></p>
+
+<h2>Passengers</h2>
+<ul>
+    <% @booking.passengers.each do |passenger| %>
+        <li><%= passenger.name %></li>
+    <% end %>
+</ul>
