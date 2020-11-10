@@ -1,4 +1,4 @@
-<%= form_with url: "/bookings/new", method: "GET", scope: :selected_flight do |form| %>
+<%= form_with url: "/bookings/new", method: "GET", scope: :selected_flight, local: true do |form| %>
     <% @matching_flights.each do |flight| %>
         <p>
             <strong>From:</strong> <%= flight.from_airport.name %>  
@@ -6,8 +6,8 @@
             <strong>Departure:</strong> <%= flight.departure_time_date_and_time %>
             <strong>Duration:</strong> <%= flight.duration %> minutes
 
-            <%= radio_button_tag :flight_id, flight.id %>
-            <%= hidden_field :selected_flight, params[:search][:number_of_passengers] %>
+            <%= form.radio_button :flight_id, flight.id %>
+            <%= form.hidden_field :number_of_passengers, value: params[:search][:number_of_passengers] %>
         </p>
 
     <% end %>

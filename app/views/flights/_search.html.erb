@@ -3,7 +3,7 @@
     <%= form.collection_select(:departure_airport_id, @airports, :id, :name) %>
 
     <%= form.label :destination_airport_id, "To:" %>
-    <%= form.collection_select(:destination_airport_id, @airports, :id, :name) %>
+    <%= form.collection_select(:destination_airport_id, @airports, :id, :name, selected: @airports.last.id) %>
 
     <%= form.label :number_of_passengers, "Passengers:" %>
     <%= form.select(:number_of_passengers, @number_of_passengers ) %>

@@ -4,7 +4,7 @@
 <%= render "search" %>
 
 
-<% if @matching_flights.any? %>
+<% if @matching_flights && @matching_flights.any? %>
     <h3>Results:</h3>
         <%= render "results" %>
 <% else %>
