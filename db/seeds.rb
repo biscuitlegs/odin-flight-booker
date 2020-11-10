@@ -9,4 +9,12 @@
 sanfrancisco_airport = Airport.create(name: "San Francisco International", code: "SFO")
 heathrow_airport = Airport.create(name: "London Heathrow", code: "LHR")
 
-Flight.create(departure_time: Time.zone.now, duration: 60, departure_airport_id: sanfrancisco_airport.id, destination_airport_id: heathrow_airport.id)
+flight = Flight.create(departure_time: Time.zone.now, duration: 60, departure_airport_id: sanfrancisco_airport.id, destination_airport_id: heathrow_airport.id)
+
+booking = Booking.create(flight_id: 1)
+
+passengers = [ Passenger.create(name: "Mark", email: "mark@example.com"),
+               Passenger.create(name: "Emma", email: "emma@example.com") 
+            ]
+
+booking.passengers = passengers
